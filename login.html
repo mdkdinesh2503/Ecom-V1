@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title name  -->
-    <title> Shopie.Login </title>
+    <title> L G | S h o p i e . </title>
 
     <!-- Title logo link  -->
-    <link rel="icon" type="image/x-icon" href="./images/Head_logo.png">
+    <link rel="icon" type="image/x-icon" href="./images/Title_Image.png">
 
     <!-- Font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -29,7 +29,8 @@
     <!-- Header section starts here -->
     <header>
 
-        <a class="header-logo" href="./index.html"> <img src="./images/Header_logo.png" alt="Header Logo" title="Shop">
+        <a class="header-logo" href="./index.html" title="S h o p i e ."> <img src="./images/Title_Image.png"
+                alt="Header Logo">
             <p class="header-name">Shopie.</p>
         </a>
 
@@ -41,43 +42,45 @@
 
         <div class="icon-container">
             <div id="menu-btn" class="fas fa-bars"></div>
-            <img id="search-btn" src="./images/Header_Search.png" alt="Header Search" title="Search">
-            <img id="cart-btn" src="./images/Header_Cart.png" alt="Header Cart" title="Add to Cart">
-            <a href="./login.html"><img class="activateLogin" src="./images/Header_User.png" alt="Header User" title="Already Active"></a>
+            <img id="search-btn" src="./images/Home/Header/Search.png" alt="Header Search" title="Search">
+            <img id="cart-btn" src="./images/Home/Header/Cart.png" alt="Header Cart" title="Add to Cart">
+            <a href="./login.html"><img src="./images/Home/Header/User.png" class="activateLogin" alt="Header User"
+                    title="Sign-in/Sign-up"></a>
         </div>
 
     </header>
     <!-- Header section ends here -->
 
     <!-- Login section starts here -->
-
-    <section class="login" id="login">
+    <section class="login" id="loginBlur">
 
         <div class="login-container">
 
-            <form class="login-contents">
+            <form class="login-contents" onsubmit="loginForm(event)">
 
                 <h2 class="login-title">Sign In</h2>
 
                 <div class="login-content">
 
                     <i class="fas fa-user"></i>
-                    <input type="text" autocomplete="off" name="username" placeholder="Email / Mobile Number" />
+                    <input type="text" id="username" autocomplete="off" name="username"
+                        placeholder="Email / Mobile Number" required />
 
                 </div>
 
                 <div class="login-content">
 
                     <i class="fas fa-lock"></i>
-                    <input type="password" name="password" placeholder="Password" />
+                    <input type="password" id="password" autocomplete="off" name="password" placeholder="Password"
+                        required />
 
                 </div>
 
                 <div class="login-buttons">
 
                     <div class="login-password-1">
-                        <input type="checkbox">
-                        <p>Show Password</p>
+                        <input type="checkbox" id="myCheck" onclick="showPassword()">
+                        <label for="myCheck">Show Password</label>
                     </div>
 
                     <a class="login-password-2">Forgot Password?</a>
@@ -96,8 +99,35 @@
         </div>
 
     </section>
-
     <!-- Login section ends here -->
+
+    <!-- Successfully user login popup starts here  -->
+
+    <div id="user-popup" class="user-popup">
+
+        <img src="./images/tick.png" alt="">
+
+        <h1>User Login Successfull!</h1>
+
+        <p>We are Redirecting to Website. Do not refresh the page!!</p><br>
+
+    </div>
+
+    <!-- Successfully user login popup ends here  -->
+
+    <!-- Successfully admin login popup starts here  -->
+
+    <div id="admin-popup" class="admin-popup">
+
+        <img src="./images/tick.png" alt="">
+
+        <h1>Admin Login Successfull!</h1>
+
+        <p>We are Redirecting to Website. Do not refresh the page!!</p><br>
+
+    </div>
+
+    <!-- Successfully admin login popup ends here  -->
 
 </body>
 

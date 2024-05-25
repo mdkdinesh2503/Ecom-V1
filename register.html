@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title name  -->
-    <title> Shopie.Register </title>
+    <title> R G | S h o p i e . </title>
 
     <!-- Title logo link  -->
-    <link rel="icon" type="image/x-icon" href="./images/Head_logo.png">
+    <link rel="icon" type="image/x-icon" href="./images/Title_Image.png">
 
     <!-- Font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -29,7 +29,8 @@
     <!-- Header section starts here -->
     <header>
 
-        <a class="header-logo" href="./index.html"> <img src="./images/Header_logo.png" alt="Header Logo" title="Shop">
+        <a class="header-logo" href="./index.html" title="S h o p i e ."> <img src="./images/Title_Image.png"
+                alt="Header Logo">
             <p class="header-name">Shopie.</p>
         </a>
 
@@ -41,50 +42,65 @@
 
         <div class="icon-container">
             <div id="menu-btn" class="fas fa-bars"></div>
-            <img id="search-btn" src="./images/Header_Search.png" alt="Header Search" title="Search">
-            <img id="cart-btn" src="./images/Header_Cart.png" alt="Header Cart" title="Add to Cart">
-            <a href="./login.html"><img class="activateRegister" src="./images/Header_User.png" alt="Header User" title="Already Active"></a>
+            <img id="search-btn" src="./images/Home/Header/Search.png" alt="Header Search" title="Search">
+            <img id="cart-btn" src="./images/Home/Header/Cart.png" alt="Header Cart" title="Add to Cart">
+            <a href="./login.html"><img src="./images/Home/Header/User.png" class="activateRegister" alt="Header User"
+                    title="Sign-in/Sign-up"></a>
         </div>
 
     </header>
     <!-- Header section ends here -->
 
     <!-- Register section starts here -->
-
-    <section class="register" id="register">
+    <section class="register" id="registerBlur">
 
         <div class="register-container">
 
-            <form class="register-contents">
+            <form class="register-contents" id="registerFormValue">
 
                 <h2 class="register-title">Sign Up</h2>
 
-                <div class="register-content">
+                <div class="register-content" id="mobileBorder">
 
                     <i class="fas fa-phone"></i>
-                    <input type="tel" autocomplete="off" name="mobile" placeholder="Mobile Number" />
+                    <input type="tel" autocomplete="off" id="mobile" name="mobile" placeholder="Mobile Number" onkeyup="mobileValidate()" required/>
 
                 </div>
 
-                <div class="register-content">
+                <div class="information-error">
+                    <p id="mobileSuccessMsg" class="success"><i id="mobileSuccessMsg" class="fas fa-thumbs-up"></i> Correct</p>
+                    <p class="error" id="mobileErrorMsg"><i id="mobileErrorMsg" class="fas fa-exclamation-circle"></i> Enter valid Mobile Number!</p>
+                </div>
+
+                <div class="register-content" id="emailBorder">
 
                     <i class="fas fa-envelope"></i>
-                    <input type="email" autocomplete="off" name="email" placeholder="Email" />
+                    <input type="email" autocomplete="off" id="email" name="email" placeholder="Email" onkeyup="emailValidate()" required/>
 
                 </div>
 
-                <div class="register-content">
+                <div class="information-error">
+                    <p id="emailSuccessMsg" class="success"><i id="emailSuccessMsg" class="fas fa-thumbs-up"></i> Correct</p>
+                    <p class="error" id="emailErrorMsg"><i id="emailErrorMsg" class="fas fa-exclamation-circle"></i> Enter valid Email Id!</p>
+                </div>
+
+                <div class="register-content" id="passwordBorder">
 
                     <i class="fas fa-lock"></i>
-                    <input type="text" autocomplete="off" name="password" placeholder="Password" />
+                    <input type="text" autocomplete="off" id="password" name="password" placeholder="Password" onkeyup="passwordValidate()" required/>
 
+                </div>
+
+                <div class="information-error">
+                    <p id="passSuccessMsg" class="success"><i id="passSuccessMsg" class="fas fa-thumbs-up"></i> Correct</p>
+                    <p class="error" id="passErrorMsg"><i id="passErrorMsg" class="fas fa-exclamation-circle"></i> Enter valid Password!</p>
                 </div>
 
                 <p class="terms">By creating an account, you agree to Shopie's <span> Conditions of Use </span> and
                     <span> Privacy Notice. </span>
                 </p>
 
-                <button type="submit" class="register-btn">Create</button>
+                <button type="submit" class="register-btn" >Create</button>
 
                 <p class="login-register">Already have an account ? <a href="./login.html">Sign In</a></p>
 
@@ -93,8 +109,22 @@
         </div>
 
     </section>
-
     <!-- Register section ends here -->
+
+    <!-- Successfully register popup starts here  -->
+
+    <div id="register-popup" class="popup">
+
+        <img src="./images/tick.png" alt="">
+
+        <h1>Thank You!</h1>
+
+        <p>Your details has been successfully submitted. Thanks!</p>
+        <p class="differ">We are Redirecting to Website. Do not refresh the page!!</p><br>
+
+    </div>
+
+    <!-- Successfully register popup ends here  -->
 
 </body>
 
