@@ -119,9 +119,9 @@ registerForm.addEventListener("submit", function (event) {
     );
     return false;
   } else {
-    var blur = document.getElementById("registerBlur");
+    var blur = document.getElementById("blur");
     blur.classList.toggle("active");
-    var RegisterPopup = document.getElementById("register-popup");
+    var RegisterPopup = document.getElementById("popup");
     RegisterPopup.classList.toggle("active");
 
     setInterval(openLoginPage, 3000);
@@ -144,26 +144,25 @@ function loginForm(event) {
   var Password = document.getElementById("password").value;
 
   if (UserName == "admin" && Password == "admin") {
-    var Destroy1 = document.getElementById("loginBlur");
-    Destroy1.classList.toggle("active");
-    var AdminLoginPopup = document.getElementById("admin-popup");
-    AdminLoginPopup.classList.toggle("active");
-
+    popup();
     setInterval(adminDashboard, 3000);
 
     return false;
   } else if (UserName == "mdk" && Password == "mdk") {
-    var Destroy = document.getElementById("loginBlur");
-    Destroy.classList.toggle("active");
-    var UserLoginPopup = document.getElementById("user-popup");
-    UserLoginPopup.classList.toggle("active");
-
+    popup();
     setInterval(userDashboard, 3000);
 
     return false;
   } else {
     alert("Invalid Crendentials");
   }
+}
+
+function popup() {
+  var blur = document.getElementById("blur");
+  blur.classList.toggle("active");
+  var popup = document.getElementById("popup");
+  popup.classList.toggle("active");
 }
 
 function userDashboard() {

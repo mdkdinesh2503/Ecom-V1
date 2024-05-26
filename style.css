@@ -1280,8 +1280,6 @@ footer .credit span {
         Register success popup starts here
 --------------------------------------------------- */
 
-.admin-popup,
-.user-popup,
 .popup {
   position: fixed;
   top: 50%;
@@ -1302,30 +1300,22 @@ footer .credit span {
   transition: 0.5s;
 }
 
-#register-popup.active,
-#admin-popup.active,
-#user-popup.active {
+#popup.active {
   display: block;
   visibility: visible;
   opacity: 1;
   transition: 0.5s;
 }
 
-.admin-popup img,
-.user-popup img,
 .popup img {
   height: 4rem;
   width: 4rem;
 }
 
-.admin-popup h1,
-.user-popup h1,
 .popup h1 {
   font-size: 1.8rem;
 }
 
-.admin-popup p,
-.user-popup p,
 .popup p {
   font-size: 1rem;
 }
@@ -1334,8 +1324,6 @@ footer .credit span {
   color: var(--main-color);
 }
 
-.admin-popup button,
-.user-popup button,
 .popup button {
   font-size: 1.5rem;
   padding: 0.2rem 0.8rem;
@@ -1346,15 +1334,12 @@ footer .credit span {
   background-color: var(--green);
 }
 
-.admin-popup button:hover,
-.user-popup button:hover,
 .popup button:hover {
   color: var(--green);
   background-color: var(--white);
 }
 
-#loginBlur.active,
-#registerBlur.active {
+#blur.active {
   filter: blur(20px);
   pointer-events: none;
   user-select: none;
