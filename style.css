@@ -666,7 +666,7 @@ header .nav-bar a:hover i {
   background-color: var(--bg);
 }
 
-.categories .categories-content .cat-contents{
+.categories .categories-content .cat-contents {
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;

@@ -124,13 +124,13 @@ registerForm.addEventListener("submit", function (event) {
     var RegisterPopup = document.getElementById("register-popup");
     RegisterPopup.classList.toggle("active");
 
-    setInterval(openLoginPage,3000);
+    setInterval(openLoginPage, 3000);
     return false;
   }
 });
 
 function openLoginPage() {
-  window.location.href = 'login.html';
+  window.location.href = "login.html";
 }
 
 // Register Validation ends here
@@ -149,7 +149,7 @@ function loginForm(event) {
     var AdminLoginPopup = document.getElementById("admin-popup");
     AdminLoginPopup.classList.toggle("active");
 
-    setInterval(adminDashboard,3000);
+    setInterval(adminDashboard, 3000);
 
     return false;
   } else if (UserName == "mdk" && Password == "mdk") {
@@ -158,7 +158,7 @@ function loginForm(event) {
     var UserLoginPopup = document.getElementById("user-popup");
     UserLoginPopup.classList.toggle("active");
 
-    setInterval(userDashboard,3000);
+    setInterval(userDashboard, 3000);
 
     return false;
   } else {
@@ -167,11 +167,11 @@ function loginForm(event) {
 }
 
 function userDashboard() {
-  window.location.href = 'userDashboard.html';
+  window.location.href = "userDashboard.html";
 }
 
 function adminDashboard() {
-  window.location.href = 'adminDashboard.html';
+  window.location.href = "adminDashboard.html";
 }
 
 // login validation ends here
