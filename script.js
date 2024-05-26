@@ -119,10 +119,7 @@ registerForm.addEventListener("submit", function (event) {
     );
     return false;
   } else {
-    var blur = document.getElementById("blur");
-    blur.classList.toggle("active");
-    var RegisterPopup = document.getElementById("popup");
-    RegisterPopup.classList.toggle("active");
+    popup();
 
     setInterval(openLoginPage, 3000);
     return false;
