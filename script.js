@@ -99,68 +99,69 @@ function passwordValidate() {
 
 // Register form submit starts here
 
-try {
-  const registerForm = document.getElementById("registerFormValue");
+const registerForm = document.getElementById("registerFormValue");
 
-  registerForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    var mobileValidate = "^[6-9]{1}[0-9]{9}$";
-    var emailValidate =
-      "^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
-    var passwordValidate = "^(.{0,6}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$";
-    var mobile = document.getElementById("mobile").value;
-    var email = document.getElementById("email").value;
-    var password = document.getElementById("password").value;
+registerForm.addEventListener("submit", function (event) {
+  event.preventDefault();
+  var mobileValidate = "^[6-9]{1}[0-9]{9}$";
+  var emailValidate =
+    "^[0-9a-zA-Z]+[._]{0,1}[0-9a-zA-Z]+[@][a-zA-Z]+[.][a-zA-Z]{2,3}([.][a-zA-Z]{2,3}){0,1}$";
+  var passwordValidate = "^(.{0,6}|[^0-9]*|[^A-Z]*|[^a-z]*|[a-zA-Z0-9]*)$";
+  var mobile = document.getElementById("mobile").value;
+  var email = document.getElementById("email").value;
+  var password = document.getElementById("password").value;
 
-    if (!mobile.match(mobileValidate)) {
-      alert("Mobile Nuber should Only Contains Numbers!");
-      return false;
-    } else if (!email.match(emailValidate)) {
-      alert("Enter proper email id!");
-      return false;
-    } else if (password.match(passwordValidate)) {
-      alert(
-        "password Should contains min 7 digits, uppercase, lowercase, number and special character"
-      );
-      return false;
-    } else {
-      popup();
+  if (!mobile.match(mobileValidate)) {
+    alert("Mobile Nuber should Only Contains Numbers!");
+    return false;
+  } else if (!email.match(emailValidate)) {
+    alert("Enter proper email id!");
+    return false;
+  } else if (password.match(passwordValidate)) {
+    alert(
+      "password Should contains min 7 digits, uppercase, lowercase, number and special character"
+    );
+    return false;
+  } else {
+    popup();
+    setInterval(() => {
+      window.location.href = "login.html";
+    }, 3000);
+    return false;
+  }
+});
 
-      setInterval((window.location.href = "login.html"), 3000);
-      return false;
-    }
-  });
-} catch (error) {
-  // console.log(error);
+function openLoginPannel() {
+  window.location.href = "login.html";
 }
 
 // Register form submit ends here
 
 // login validation starts here
 
-try {
-  function loginForm(event) {
-    event.preventDefault();
+function loginForm(event) {
+  event.preventDefault();
 
-    var UserName = document.getElementById("username").value;
-    var Password = document.getElementById("password").value;
+  var UserName = document.getElementById("username").value;
+  var Password = document.getElementById("password").value;
 
-    if (UserName == "admin" && Password == "admin") {
-      popup();
-      setInterval((window.location.href = "adminDashboard.html"), 3000);
+  if (UserName == "admin" && Password == "admin") {
+    popup();
+    setInterval(() => {
+      window.location.href = "adminDashboard.html";
+    }, 3000);
 
-      return false;
-    } else if (UserName == "mdk" && Password == "mdk") {
-      popup();
-      setInterval((window.location.href = "userDashboard.html"), 3000);
+    return false;
+  } else if (UserName == "mdk" && Password == "mdk") {
+    popup();
+    setInterval(() => {
+      window.location.href = "userDashboard.html";
+    }, 3000);
 
-      return false;
-    } else {
-      alert("Invalid Crendentials");
-    }
+    return false;
+  } else {
+    alert("Invalid Crendentials");
   }
-} catch (error) {
-  // console.log(error);
 }
 
 function popup() {

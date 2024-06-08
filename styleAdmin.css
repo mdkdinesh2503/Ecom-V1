@@ -7,21 +7,27 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
 
 :root {
-  --main-color: #1198db;
-  --light-main: #9ddaf6;
+  /* color */
+  --bg: #f1f1f1;
+  --main-color: #eb3f88;
   --black: #000;
   --white: #fff;
   --red: #ff1200;
-  --green: #158871;
+  --green: #159538;
   --light-color: #666;
+
+  /* border */
   --border: 0.1rem solid var(--light-color);
   --red-border: 0.1rem solid var(--red);
+  --green-border: 0.1rem solid var(--green);
   --main-border: 0.1rem solid var(--main-color);
-  --white-border: 0.1rem solid var(--white);
   --i-border: 0.1rem solid transparent;
+
+  /* Shadow */
   --box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.1);
-  --main-box-shadow: 0px 2px 20px 2px var(--main-color);
   --text-shadow: 0.1rem 0.1rem 0.1rem var(--main-color);
+  --text-shadow-black: 0 1px 5px rgba(0, 0, 0, 0.3);
+  --text-shadow-icon: 0 0 3px #000;
   --overlay-bg: linear-gradient(#171717b9 0%, #171717b9 100%);
 }
 
@@ -49,7 +55,7 @@
 }
 
 ::-webkit-scrollbar-track {
-  background-color: transparent;
+  background-color: var(--bg);
 }
 
 ::-webkit-scrollbar-thumb {
@@ -64,252 +70,296 @@ html {
 /* Overall styling ends here  */
 
 /*-------------------------------------------------------------
+--------------- Header section starts here-------------
+---------------------------------------------------------------  */
+
+header {
+  padding: 0.8rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transition: 0.6s;
+  background-color: var(--bg);
+  border-bottom: var(--main-border);
+}
+
+header .header-logo {
+  transition: 0.6s;
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+header .header-name {
+  font-size: 1.4rem;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+  margin-left: 0.1rem;
+  color: var(--black);
+}
+
+header .header-logo img {
+  height: 2.5rem;
+  width: 2.5rem;
+}
+
+header h1 {
+  font-weight: 600;
+  font-size: 2.3rem;
+  color: var(--main-color);
+}
+
+header .header-logout {
+  display: inline-flex;
+  align-items: center;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-decoration: none;
+  font-weight: 500;
+  color: var(--black);
+  border: var(--i-border);
+  letter-spacing: 0.1rem;
+  padding: 0.1rem 1rem;
+}
+
+header .header-logout:hover {
+  color: var(--main-color);
+  border: var(--main-border);
+}
+
+header .header-logout img {
+  height: 2.6rem;
+  width: 2.6rem;
+}
+
+/* Header Section ends here */
+
+/*-------------------------------------------------------------
 ----------------- navigation section starts here---------------
 ---------------------------------------------------------------  */
 
-.navigation {
-  height: 100%;
-  width: 3rem;
-  position: relative;
-}
-
-.navigation .menu-btn {
-  position: fixed;
-  left: 1.8rem;
-  top: 1rem;
-  background: var(--main-color);
-  color: var(--white);
-  height: 2.8rem;
-  width: 2.8rem;
-  z-index: 10000;
-  border: var(--main-border);
-  border-radius: 5px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.3s ease;
-}
-
-#btn:checked ~ .menu-btn {
-  left: 255px;
-}
-
-.navigation .menu-btn i {
-  position: absolute;
-  font-size: 1.6rem;
-}
-
-.navigation .menu-btn:hover {
-    background-color: var(--white);
-    color: var(--main-color);
-  }
-
-.navigation .menu-btn i.fa-times {
-  opacity: 0;
-}
-
-#btn:checked ~ .menu-btn i.fa-times {
-  opacity: 1;
-  transform: rotate(-180deg);
-}
-
-#btn:checked ~ .menu-btn i.fa-bars {
-  opacity: 0;
-  transform: rotate(180deg);
-}
-
 #sidebar {
-  position: fixed;
-  border: var(--main-border);
-  background-color: var(--light-main);
-  height: 100%;
-  width: 255px;
-  overflow-y: scroll;
-  left: -270px;
+  border-right: var(--main-border);
+  background-color: var(--bg);
+  height: 89vh;
+  width: 15rem;
+  overflow: hidden;
   transition: all 0.3s ease;
-  z-index: 9999;
-}
-
-#btn:checked ~ #sidebar {
-  left: 0;
-}
-
-#sidebar .title {
-  display: inline-flex;
-  width: 100%;
-  padding: 1rem 3rem;
-  background: var(--light-main);
-  border-bottom: var(--main-border);
-  color: var(--black);
-  font-size: 1.5rem;
-  font-weight: 600;
-  cursor: pointer;
-  padding-left:3.2rem;
-}
-
-#sidebar .title img {
-  height: 2.5rem;
-  width: 2.5rem;
-  margin-right: .3rem;
-}
-
-#sidebar .title p {
-    margin-top: .5rem;
-}
-
-#sidebar .list-items {
-  position: relative;
-  width: 100%;
-  height: 92%;
+  z-index: 10000;
   list-style: none;
+  line-height: 3;
 }
 
-#sidebar .list-items li {
-  padding-left: 30px;
-  line-height: 50px;
-  border-top: var(--main-border);
-  border-bottom: var(--main-border);
-  transition: all 0.3s ease;
+#sidebar li {
+  padding: 0 2rem;
+  cursor: pointer;
 }
 
-#sidebar .list-items li:hover {
-  border-top: var(--i-border);
-  border-bottom: var(--i-border);
-  background-color: var(--main-color);
-  box-shadow: 0 0px 10px 3px var(--main-color);
+#sidebar li:hover a i,
+#sidebar li:hover a {
+  color: var(--white);
 }
 
-#sidebar .list-items li a {
+#sidebar li a {
   color: var(--black);
   text-decoration: none;
   font-size: 18px;
-  font-weight: 500;
+  font-weight: 400;
   height: 100%;
   width: 100%;
   display: block;
 }
 
-#sidebar .list-items li a i {
+#sidebar li a i {
   margin-right: 15px;
   color: var(--black);
   font-size: 1.2rem;
 }
 
+#sidebar .activated {
+  background-color: var(--main-color);
+  box-shadow: 0 0px 10px 3px var(--main-color);
+}
+
+#sidebar .activated a {
+  color: var(--white);
+}
+
+#sidebar .activated a i {
+  color: var(--white);
+}
+
+#sidebar li:hover {
+  color: var(--white);
+  background-color: var(--main-color);
+  box-shadow: 0 0px 10px 3px var(--main-color);
+}
+
 /* navigation section ends here  */
 
 /*-------------------------------------------------------------
---------------- Overall common Section starts here-------------
+----------------- Dashboard section starts here---------------
 ---------------------------------------------------------------  */
 
-header {
-  height: 2.7rem;
-  display: flex;
-  width: 100%;
-  position: fixed;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #efefef;
-  border: 1px solid var(--main-color);
-  box-shadow: 0.5rem 0.5rem 0 var(--light-blue);
-  padding: 1rem 8rem;
-  z-index: 5000;
-}
-
-.main-content {
-  padding: 0;
-  overflow: hidden;
-}
-
-.main-content header .menu-toggle h1 {
-  margin-left: -2rem;
-  font-weight: bolder;
-  font-size: 2.3rem;
-  color: var(--main-color);
-}
-
- .main-content header .icon{
-  cursor: pointer;
-  text-decoration: none;
-  margin-right: 14rem;
-  font-size: 2rem;
-  font-weight: 600;
-  color: var(--main-color);
-}
-
 .main {
-  padding: 1.2rem;
-  background: var(--light-main);
-  min-height: 89.2vh;
   margin-top: 4.8rem;
+  display: grid;
+  grid-template-columns: 16% 84%;
 }
 
-.page-header {
+.main .main-content {
+  background-color: var(--bg);
+}
+
+.main .main-content .main-content-1 {
   display: flex;
-  height: 50px;
-  border-bottom: var(--main-border);
-  justify-content: space-between;
-}
-
-.UserDesign {
-  font-size: 1.5rem;
-  text-transform: capitalize;
-  color: var(--main-color);
-  background-color: #fff;
-  padding: 6px;
-  margin-left: 1rem;
-  font-weight: 700;
-  border: var(--main-border);
-}
-
-.header-actions .emoji {
-  outline: none;
-  text-decoration: none;
-  color: var(--white);
-  background: var(--main-color);
-  border: var(--main-border);
-  padding: 0.5rem 0.9rem;
-  border-radius: 3px;
-  font-weight: 500;
-  cursor: pointer;
-  font-size: 1.2rem;
-  margin-right: 5.8rem;
-}
-
-.header-actions a:hover {
-  background: var(--white);
-  color: var(--main-color);
-  box-shadow: var(--box-shadow);
-}
-
-.buttons {
-  display: flex;
-  text-align: center;
+  flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 1rem auto;
 }
 
-.btn {
-  color: var(--white);
-  background: var(--main-color);
+.main .main-content .main-content-1 .cards {
+  border: var(--main-border);
   box-shadow: var(--box-shadow);
-  font-size: 1.2rem;
-  padding: 0.2rem 1rem;
-  font-weight: 500;
-  margin: 2rem;
-  justify-content: space-between;
-  text-decoration: none;
-  border: var(--border);
-  cursor: pointer;
+  padding: 1rem;
+  height: 5.5rem;
+  text-align: center;
+  width: 12rem;
+  line-height: 1.4;
 }
 
-.btn i {
+.main .main-content .main-content-1 .cards i {
+  font-size: 1.6rem;
+  color: var(--main-color);
+}
+
+.main .main-content .main-content-1 .cards h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+  margin-bottom: 0.3rem;
+}
+
+.main .main-content .main-content-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin: 1rem auto;
+  place-items: center;
+}
+
+.main .main-content .main-content-2 .main-items {
+  box-shadow: var(--box-shadow);
+  background-color: var(--white);
+  padding: 1rem;
+  width: 20rem;
+  margin: 2rem auto;
+  border-top: 0.2rem solid var(--main-color);
+  border-left: var(--main-border);
+  border-right: var(--main-border);
+  border-bottom: var(--main-border);
+}
+
+.main .main-content .main-content-2 .main-items h2 {
+  color: var(--main-color);
+  font-size: 1.5rem;
+  font-weight: 400;
+}
+
+.main .main-content .main-content-2 .main-items .payables {
   font-size: 1rem;
-  padding: 0.2rem;
+  border-top: var(--border);
+  margin: 0.5rem;
+  font-weight: 400;
+  padding: 1rem 0.5rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
-.btn:hover {
-  background: var(--white);
+.main .main-content .main-content-2 .main-items .payables span {
+  font-weight: 900;
+  letter-spacing: 0.1rem;
+}
+
+.main .main-content .main-content-2 .main-items .items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.main .main-content .main-content-2 .main-items .items i {
+  border: var(--border);
+  padding: 1rem;
+  width: 3rem;
+  text-shadow: var(--text-shadow-black);
+  font-size: 1.7rem;
   color: var(--main-color);
 }
 
 /* Overall common Section ends here */
+
+.list-table {
+  border-collapse: collapse;
+  margin: 1rem auto;
+  font-size: 14px;
+  width: 80%;
+  border-radius: 5px 5px 0 0;
+  box-shadow: var(--box-shadow);
+}
+
+.list-table thead tr {
+  color: var(--white);
+  background: var(--main-color);
+  text-align: left;
+}
+
+.list-table th,
+.list-table td {
+  padding: 12px 15px;
+}
+
+.list-table tbody tr:nth-of-type(odd) {
+  background: var(--white);
+}
+
+.list-table tbody tr:last-of-type {
+  border-bottom: var(--main-border);
+}
+
+.list-table tbody tr td .fa-trash-alt {
+  border: var(--red-border);
+  color: var(--red);
+  padding: .3rem;
+  border-radius: .2rem;
+  margin-left: .5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.list-table tbody tr td .fa-trash-alt:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.list-table tbody tr td .fa-edit:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+.list-table tbody tr td .fa-edit {
+  border: var(--green-border);
+  color: var(--green);
+  padding: .2rem;
+  border-radius: .2rem;
+  margin-left: .1rem;
+  cursor: pointer;
+}
