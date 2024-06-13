@@ -1,3 +1,84 @@
+// Product Display starts here
+
+let products = null;
+fetch("products.json")
+  .then((response) => response.json())
+  .then((data) => {
+    products = data;
+    showProducts();
+  });
+
+function showProducts() {
+  products.forEach((product) => {
+    const discount = product.price * (product.discount / 100);
+    const rating = product.rating.rate;
+    const star1 = rating > 0.5 && rating <= 1.5 ? "fill-rate" : "";
+    const star2 = rating > 1.5 && rating <= 2.5 ? "fill-rate" : "";
+    const star3 = rating > 2.5 && rating <= 3.5 ? "fill-rate" : "";
+    const star4 = rating > 3.5 && rating <= 4.5 ? "fill-rate" : "";
+    const star5 = rating > 4.5 ? "fill-rate" : "";
+    const div = document.createElement("div");
+    div.classList.add("product");
+    if (product.discount == 0) {
+      div.innerHTML = `
+    <div class="categories-product" title="${product.title}">
+                    <img src="${product.image}" />
+                    <h3>${product.title}...</h3>
+                    <div class="cat-container">
+                        <div class="cat-content">
+                           <div class="rating">
+                                <div class="star">
+                                  <i class="fas fa-star ${star5} ${star4} ${star3} ${star2} ${star1}"></i>
+                                  <i class="fas fa-star ${star5} ${star4} ${star3} ${star2}"></i>
+                                  <i class="fas fa-star ${star5} ${star4} ${star3}"></i>
+                                  <i class="fas fa-star ${star5} ${star4}"></i>
+                                  <i class="fas fa-star ${star5}"></i>
+                                </div>
+                                <p class="rate-count">(${product.rating.count})</p>
+                            </div>
+                            <div class="amount">
+                                <h4>&#8377;${product.price}</h4>
+                            </div>
+                        </div>
+                        <i class="fas fa-shopping-cart" title="Add to Cart"></i>
+                    </div>
+                </div>
+    `;
+    } else {
+      div.innerHTML = `
+    <div class="categories-product" title="${product.title}">
+                    <h2>-${product.discount}%</h2>
+                    <img src="${product.image}" />
+                    <h3>${product.title}...</h3>
+                    <div class="cat-container">
+                        <div class="cat-content">
+                           <div class="rating">
+                                <div class="star">
+                                <i class="fas fa-star ${star5} ${star4} ${star3} ${star2} ${star1}"></i>
+                                <i class="fas fa-star ${star5} ${star4} ${star3} ${star2}"></i>
+                                <i class="fas fa-star ${star5} ${star4} ${star3}"></i>
+                                <i class="fas fa-star ${star5} ${star4}"></i>
+                                <i class="fas fa-star ${star5}"></i>
+                                </div>
+                                <p class="rate-count">(${product.rating.count})</p>
+                            </div>
+                            <div class="amount">
+                                <h4>&#8377;${discount}</h4>
+                                <h5>&#8377;${product.price}</h5>
+                            </div>
+                        </div>
+                        <i class="fas fa-shopping-cart" title="Add to Cart"></i>
+                    </div>
+                </div>
+    `;
+    }
+
+    document.getElementById("all-products").appendChild(div);
+  });
+}
+
+// Product Display ends here
+
 // Login Password visible part starts here
 
 function activeCheckBox() {
@@ -172,84 +253,3 @@ function popup() {
 }
 
 // login validation ends here
-
-// Product Display starts here
-
-let products = null;
-fetch("products.json")
-  .then((response) => response.json())
-  .then((data) => {
-    products = data;
-    showProducts();
-  });
-
-function showProducts() {
-  products.forEach((product) => {
-    const discount = product.price * (product.discount / 100);
-    const rating = product.rating.rate;
-    const star1 = rating > 0.5 && rating <= 1.5 ? "fill-rate" : "";
-    const star2 = rating > 1.5 && rating <= 2.5 ? "fill-rate" : "";
-    const star3 = rating > 2.5 && rating <= 3.5 ? "fill-rate" : "";
-    const star4 = rating > 3.5 && rating <= 4.5 ? "fill-rate" : "";
-    const star5 = rating > 4.5 ? "fill-rate" : "";
-    const div = document.createElement("div");
-    div.classList.add("product");
-    if (product.discount == 0) {
-      div.innerHTML = `
-    <div class="categories-product" title="${product.title}">
-                    <img src="${product.image}" />
-                    <h3>${product.title}...</h3>
-                    <div class="cat-container">
-                        <div class="cat-content">
-                           <div class="rating">
-                                <div class="star">
-                                  <i class="fas fa-star ${star5} ${star4} ${star3} ${star2} ${star1}"></i>
-                                  <i class="fas fa-star ${star5} ${star4} ${star3} ${star2}"></i>
-                                  <i class="fas fa-star ${star5} ${star4} ${star3}"></i>
-                                  <i class="fas fa-star ${star5} ${star4}"></i>
-                                  <i class="fas fa-star ${star5}"></i>
-                                </div>
-                                <p class="rate-count">(${product.rating.count})</p>
-                            </div>
-                            <div class="amount">
-                                <h4>&#8377;${product.price}</h4>
-                            </div>
-                        </div>
-                        <i class="fas fa-shopping-cart" title="Add to Cart"></i>
-                    </div>
-                </div>
-    `;
-    } else {
-      div.innerHTML = `
-    <div class="categories-product" title="${product.title}">
-                    <h2>-${product.discount}%</h2>
-                    <img src="${product.image}" />
-                    <h3>${product.title}...</h3>
-                    <div class="cat-container">
-                        <div class="cat-content">
-                           <div class="rating">
-                                <div class="star">
-                                <i class="fas fa-star ${star5} ${star4} ${star3} ${star2} ${star1}"></i>
-                                <i class="fas fa-star ${star5} ${star4} ${star3} ${star2}"></i>
-                                <i class="fas fa-star ${star5} ${star4} ${star3}"></i>
-                                <i class="fas fa-star ${star5} ${star4}"></i>
-                                <i class="fas fa-star ${star5}"></i>
-                                </div>
-                                <p class="rate-count">(${product.rating.count})</p>
-                            </div>
-                            <div class="amount">
-                                <h4>&#8377;${discount}</h4>
-                                <h5>&#8377;${product.price}</h5>
-                            </div>
-                        </div>
-                        <i class="fas fa-shopping-cart" title="Add to Cart"></i>
-                    </div>
-                </div>
-    `;
-    }
-
-    document.getElementById("all-products").appendChild(div);
-  });
-}
-
-// Product Display ends here

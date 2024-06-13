@@ -1,7 +1,7 @@
 /* ------------------------------------------------------ADMIN CONTAINER STYLE STARTS HERE------------------------------------------------------ */
 
 /*-------------------------------------------------------------
------------------ Overall Styling starts here------------------
+----------------- Overall Styling section starts here -----------------
 ---------------------------------------------------------------  */
 
 @import url("https://fonts.googleapis.com/css2?family=Nunito:wght@200;300;400;500;600;700&display=swap");
@@ -14,7 +14,7 @@
   --white: #fff;
   --red: #ff1200;
   --green: #159538;
-  --light-color: #666;
+  --light-color: #666666;
 
   /* border */
   --border: 0.1rem solid var(--light-color);
@@ -24,10 +24,12 @@
   --i-border: 0.1rem solid transparent;
 
   /* Shadow */
-  --box-shadow: 0 2px 20px 2px rgba(0, 0, 0, 0.1);
+  --white-box-shadow: 0 2px 20px 2px var(--white);
+  --box-shadow: 0 2px 20px 2px #0000001a;
+  --main-box-shadow: 0 0px 10px 3px var(--main-color);
   --text-shadow: 0.1rem 0.1rem 0.1rem var(--main-color);
-  --text-shadow-black: 0 1px 5px rgba(0, 0, 0, 0.3);
-  --text-shadow-icon: 0 0 3px #000;
+  --text-shadow-black: 0 1px 5px #0000004d;
+  --text-shadow-icon: 0 0 3px var(--black);
   --overlay-bg: linear-gradient(#171717b9 0%, #171717b9 100%);
 }
 
@@ -67,7 +69,269 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Overall styling ends here  */
+/* Overall Body section starts here */
+
+.main {
+  margin-top: 4.8rem;
+  display: grid;
+  grid-template-columns: 15% 86%;
+}
+
+.main .main-content {
+  background-color: var(--bg);
+}
+
+/* Overall Body section ends here */
+
+/* Overall List Table section starts here */
+
+.list-table {
+  border-collapse: collapse;
+  margin: 1rem auto;
+  font-size: 1rem;
+  width: 80%;
+  border-radius: 5px 5px 0 0;
+  box-shadow: var(--box-shadow);
+}
+
+.list-table thead tr {
+  color: var(--white);
+  background: var(--main-color);
+  text-align: left;
+}
+
+.list-table thead tr th {
+  cursor: pointer;
+  text-transform: uppercase;
+}
+
+.list-table th,
+.list-table td {
+  padding: 12px 15px;
+}
+
+.list-table tbody tr:nth-of-type(odd) {
+  background: var(--white);
+}
+
+.list-table tbody tr:last-of-type {
+  border-bottom: var(--main-border);
+}
+
+.list-table tbody tr td .fa-trash-alt {
+  border: var(--red-border);
+  color: var(--red);
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  margin-left: 1rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.list-table tbody tr td .fa-trash-alt:hover {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.list-table tbody tr td .fa-edit {
+  border: var(--green-border);
+  color: var(--green);
+  padding: 0.2rem;
+  border-radius: 0.2rem;
+  margin-left: 0.3rem;
+  cursor: pointer;
+}
+
+.list-table tbody tr td .fa-edit:hover {
+  background-color: var(--green);
+  color: var(--white);
+}
+
+/* Overall List Table section ends here */
+
+/* Overall error section starts here */
+
+.information-error {
+  display: inline-flex;
+}
+
+.information-error .success,
+.information-error .error {
+  position: absolute;
+  margin-top: -0.8rem;
+  margin-left: 1rem;
+  font-size: 1rem;
+  visibility: hidden;
+  display: none;
+}
+
+.information-error .success {
+  color: var(--green);
+}
+
+.information-error .error {
+  color: var(--red);
+}
+
+.information-error .fa-thumbs-up {
+  color: var(--green);
+}
+
+.information-error .fa-exclamation-circle {
+  color: var(--red);
+}
+
+/* Overall error section ends here */
+
+/* Overall input section starts here */
+
+.main-search,
+.main-input {
+  border-radius: 4rem;
+  background-color: var(--white);
+  border: var(--main-border);
+  box-shadow: var(--box-shadow);
+  display: inline-flex;
+}
+
+.main-input input,
+.main-input {
+  width: 100%;
+}
+
+.main-search input {
+  width: 18rem;
+}
+
+.main-search input,
+.main-input input {
+  border: none;
+  background: none;
+  outline: none;
+  color: var(--main-color);
+  font-size: 1.2rem;
+  transition: all 0.8s;
+  margin-right: 0.7rem;
+  padding-left: 0.3rem;
+}
+
+.main-search input::placeholder,
+.main-input input::placeholder {
+  color: var(--light-color);
+  letter-spacing: 0.08rem;
+}
+
+.main-search i,
+.main-input i {
+  z-index: 1;
+  background: var(--main-color);
+  font-size: 1rem;
+  color: var(--white);
+  padding: 0.5rem;
+  margin: 0.4rem 0 0.4rem 0.4rem;
+  border-radius: 50px;
+}
+
+.main-input-name {
+  margin: 1rem 0 0.3rem 0.5rem;
+  font-size: 1.3rem;
+  color: var(--main-color);
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.buttons {
+  text-align: center;
+  margin: 2rem 0 1rem;
+}
+
+.btn {
+  border: var(--main-border);
+  padding: 0.5rem 1rem;
+  background-color: var(--main-color);
+  color: var(--white);
+  font-size: 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: var(--white);
+  color: var(--main-color);
+}
+
+/* Overall input section ends here */
+
+/* Overall form section starts here */
+
+.add-table {
+  max-width: 400px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem auto;
+  background-color: var(--white);
+  border-top: 8px solid var(--main-color);
+  border-left: var(--main-border);
+  border-right: var(--main-border);
+  border-bottom: var(--main-border);
+}
+
+.add-table h1 {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.add-table h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 3px;
+  width: 120px;
+  border-radius: 8px;
+  background-color: var(--main-color);
+}
+
+.add-table .input-field {
+  display: flex;
+  width: calc(100% - 15px);
+  flex-direction: column;
+  margin: 3px 0;
+}
+
+.add-table .input-field label {
+  font-size: 1.2rem;
+  color: var(--main-color);
+}
+
+.add-table .input-field input {
+  outline: none;
+  font-size: 1rem;
+  font-weight: 400;
+  border-radius: 5px;
+  border: var(--main-border);
+  padding: 0 12px;
+  height: 36px;
+  margin: 5px 0;
+  width: calc(100%-10%);
+  color: var(--light-color);
+}
+
+.add-table .input-field input:focus {
+  box-shadow: var(--box-shadow);
+  border: var(--border);
+}
+
+/* Overall form section ends here */
+
+/* Overall Styling section ends here */
 
 /*-------------------------------------------------------------
 --------------- Header section starts here-------------
@@ -137,6 +401,59 @@ header .header-logout img {
   width: 2.6rem;
 }
 
+/* Sub Header starts here  */
+
+.sub-header {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  background-color: var(--main-color);
+}
+
+.sub-header .main-total {
+  box-shadow: var(--box-shadow);
+  text-align: center;
+  display: inline-flex;
+  background-color: var(--white);
+  color: var(--main-color);
+  padding: 0.5rem 0.8rem;
+  align-items: center;
+}
+
+.sub-header .main-total i {
+  font-size: 1.5rem;
+  margin-right: 0.5rem;
+}
+
+.sub-header .main-total h1 {
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
+  font-weight: 400;
+}
+
+.sub-header .main-total p {
+  font-size: 1.3rem;
+  margin-left: 0.5rem;
+  color: var(--light-color);
+}
+
+.sub-header .main-btn {
+  color: var(--main-color);
+  background-color: var(--white);
+  padding: 0.5rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.sub-header .main-btn:hover {
+  box-shadow: var(--white-box-shadow);
+}
+
+/* Sub Header ends here  */
+
 /* Header Section ends here */
 
 /*-------------------------------------------------------------
@@ -158,11 +475,7 @@ header .header-logout img {
 #sidebar li {
   padding: 0 2rem;
   cursor: pointer;
-}
-
-#sidebar li:hover a i,
-#sidebar li:hover a {
-  color: var(--white);
+  border: var(--i-border);
 }
 
 #sidebar li a {
@@ -177,27 +490,28 @@ header .header-logout img {
 
 #sidebar li a i {
   margin-right: 15px;
-  color: var(--black);
+  color: var(--main-color);
   font-size: 1.2rem;
 }
 
 #sidebar .activated {
+  cursor: no-drop;
   background-color: var(--main-color);
   box-shadow: 0 0px 10px 3px var(--main-color);
 }
 
 #sidebar .activated a {
+  cursor: no-drop;
   color: var(--white);
 }
 
 #sidebar .activated a i {
+  cursor: no-drop;
   color: var(--white);
 }
 
 #sidebar li:hover {
-  color: var(--white);
-  background-color: var(--main-color);
-  box-shadow: 0 0px 10px 3px var(--main-color);
+  box-shadow: var(--main-box-shadow);
 }
 
 /* navigation section ends here  */
@@ -205,16 +519,6 @@ header .header-logout img {
 /*-------------------------------------------------------------
 ----------------- Dashboard section starts here---------------
 ---------------------------------------------------------------  */
-
-.main {
-  margin-top: 4.8rem;
-  display: grid;
-  grid-template-columns: 16% 84%;
-}
-
-.main .main-content {
-  background-color: var(--bg);
-}
 
 .main .main-content .main-content-1 {
   display: flex;
@@ -290,7 +594,7 @@ header .header-logout img {
 .main .main-content .main-content-2 .main-items .items {
   display: flex;
   flex-wrap: wrap;
-  gap: .5rem;
+  gap: 0.5rem;
   align-items: center;
   justify-content: center;
   text-align: center;
@@ -305,61 +609,15 @@ header .header-logout img {
   color: var(--main-color);
 }
 
-/* Overall common Section ends here */
+/* Dashboard Section ends here */
 
-.list-table {
-  border-collapse: collapse;
-  margin: 1rem auto;
-  font-size: 14px;
-  width: 80%;
-  border-radius: 5px 5px 0 0;
-  box-shadow: var(--box-shadow);
+/*-------------------------------------------------------------
+----------------- Categories section starts here-------------
+---------------------------------------------------------------  */
+
+.main .main-content .main-add-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
 }
 
-.list-table thead tr {
-  color: var(--white);
-  background: var(--main-color);
-  text-align: left;
-}
-
-.list-table th,
-.list-table td {
-  padding: 12px 15px;
-}
-
-.list-table tbody tr:nth-of-type(odd) {
-  background: var(--white);
-}
-
-.list-table tbody tr:last-of-type {
-  border-bottom: var(--main-border);
-}
-
-.list-table tbody tr td .fa-trash-alt {
-  border: var(--red-border);
-  color: var(--red);
-  padding: .3rem;
-  border-radius: .2rem;
-  margin-left: .5rem;
-  cursor: pointer;
-  font-size: 1rem;
-}
-
-.list-table tbody tr td .fa-trash-alt:hover {
-  background-color: var(--red);
-  color: var(--white);
-}
-
-.list-table tbody tr td .fa-edit:hover {
-  background-color: var(--green);
-  color: var(--white);
-}
-
-.list-table tbody tr td .fa-edit {
-  border: var(--green-border);
-  color: var(--green);
-  padding: .2rem;
-  border-radius: .2rem;
-  margin-left: .1rem;
-  cursor: pointer;
-}
+/* Categories section ends here */
