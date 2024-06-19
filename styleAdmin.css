@@ -75,6 +75,7 @@ html {
   margin-top: 4.8rem;
   display: grid;
   grid-template-columns: 15% 86%;
+  background-color: var(--bg);
 }
 
 .main .main-content {
@@ -183,8 +184,40 @@ html {
 
 /* Overall error section ends here */
 
-/* Overall input section starts here */
+/* Overall form section starts here */
 
+.add-table {
+  max-width: 400px;
+  width: 100%;
+  height: fit-content;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem auto;
+  background-color: var(--white);
+  border-top: 8px solid var(--main-color);
+  border-left: var(--main-border);
+  border-right: var(--main-border);
+  border-bottom: var(--main-border);
+}
+
+.add-table h1 {
+  position: relative;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: var(--main-color);
+  margin-bottom: 1rem;
+}
+
+.add-table h1::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 120px;
+  border-radius: 8px;
+  background-color: var(--main-color);
+}
 .main-search,
 .main-input {
   border-radius: 4rem;
@@ -213,6 +246,8 @@ html {
   transition: all 0.8s;
   margin-right: 0.7rem;
   padding-left: 0.3rem;
+  font-weight: 300;
+  letter-spacing: 0.1rem;
 }
 
 .main-search input::placeholder,
@@ -234,11 +269,11 @@ html {
 
 .main-input-name {
   margin: 1rem 0 0.3rem 0.5rem;
-  font-size: 1.3rem;
+  font-size: 1rem;
   color: var(--main-color);
   letter-spacing: 0.1rem;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
 }
 
 .buttons {
@@ -260,73 +295,6 @@ html {
 .btn:hover {
   background-color: var(--white);
   color: var(--main-color);
-}
-
-/* Overall input section ends here */
-
-/* Overall form section starts here */
-
-.add-table {
-  max-width: 400px;
-  width: 100%;
-  height: fit-content;
-  border-radius: 6px;
-  padding: 1rem;
-  margin: 1rem auto;
-  background-color: var(--white);
-  border-top: 8px solid var(--main-color);
-  border-left: var(--main-border);
-  border-right: var(--main-border);
-  border-bottom: var(--main-border);
-}
-
-.add-table h1 {
-  position: relative;
-  font-size: 1.5rem;
-  font-weight: 600;
-  color: var(--main-color);
-  margin-bottom: 1rem;
-}
-
-.add-table h1::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -1px;
-  height: 3px;
-  width: 120px;
-  border-radius: 8px;
-  background-color: var(--main-color);
-}
-
-.add-table .input-field {
-  display: flex;
-  width: calc(100% - 15px);
-  flex-direction: column;
-  margin: 3px 0;
-}
-
-.add-table .input-field label {
-  font-size: 1.2rem;
-  color: var(--main-color);
-}
-
-.add-table .input-field input {
-  outline: none;
-  font-size: 1rem;
-  font-weight: 400;
-  border-radius: 5px;
-  border: var(--main-border);
-  padding: 0 12px;
-  height: 36px;
-  margin: 5px 0;
-  width: calc(100%-10%);
-  color: var(--light-color);
-}
-
-.add-table .input-field input:focus {
-  box-shadow: var(--box-shadow);
-  border: var(--border);
 }
 
 /* Overall form section ends here */
@@ -461,7 +429,7 @@ header .header-logout img {
 ---------------------------------------------------------------  */
 
 #sidebar {
-  border-right: var(--main-border);
+  border: var(--main-border);
   background-color: var(--bg);
   height: 89vh;
   width: 15rem;
@@ -621,3 +589,221 @@ header .header-logout img {
 }
 
 /* Categories section ends here */
+
+/*-------------------------------------------------------------
+----------------- Product section starts here-------------
+---------------------------------------------------------------  */
+
+.main-product {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 1rem 8%;
+}
+
+.main-product .product-list {
+  border: var(--main-border);
+  background-color: var(--white);
+  text-align: center;
+  width: 15rem;
+  padding: 0.5rem;
+  cursor: pointer;
+  height: 20rem;
+}
+
+.main-product .product-list:hover {
+  box-shadow: var(--main-box-shadow);
+}
+
+.main-product .product-list:hover img {
+  box-shadow: var(--box-shadow);
+}
+
+.main-product .product-list img {
+  height: 13rem;
+  border: var(--i-border);
+}
+
+.main-product .product-list h3 {
+  font-weight: 400;
+  font-size: 0.9rem;
+  margin-bottom: 1rem;
+}
+
+.main-product .product-list .product-btn {
+  background-color: var(--main-color);
+  color: var(--white);
+  border: var(--main-border);
+  text-align: center;
+  font-size: 1rem;
+  padding: 0.3rem 1rem;
+}
+
+.main-product .product-list:hover .product-btn {
+  background-color: var(--white);
+  color: var(--main-color);
+}
+
+/* Single product view */
+
+.single-products-container {
+  padding-left: 1rem;
+  width: 97%;
+}
+
+.single-products-container .header-single {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 1rem 1rem;
+}
+
+.single-products-container .header-single h1 {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: 400;
+  font-size: 1.7rem;
+}
+
+.single-products-container .header-single .fa-times {
+  font-size: 1.5rem;
+  color: var(--white);
+  background-color: var(--main-color);
+  height: 2.5rem;
+  display: grid;
+  width: 2.5rem;
+  text-align: center;
+  align-items: center;
+  border: var(--main-border);
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.single-products-container .header-single .fa-times:hover {
+  color: var(--main-color);
+  background-color: transparent;
+}
+
+.single-product {
+  border: var(--main-border);
+  box-shadow: var(--box-shadow);
+  width: 90%;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.single-product .single-product-content {
+  margin: 1rem auto;
+  display: flex;
+  align-items: center;
+}
+
+.single-product img {
+  height: 25rem;
+  border-right: var(--main-border);
+}
+
+.single-product .product-content {
+  width: 70%;
+  padding-left: 1rem;
+}
+
+.single-product .product-content .discount {
+  padding: 0.5rem 1rem;
+  background-color: var(--main-color);
+  color: var(--white);
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  width: fit-content;
+  border-radius: 0 5rem 5rem 0;
+}
+
+.single-product .product-content .discount span {
+  text-transform: capitalize;
+  background-color: var(--white);
+  color: var(--main-color);
+  padding: 0 0.4rem;
+  margin: 0.2rem 0.3rem;
+}
+
+.single-product .product-content .star i {
+  color: var(--white);
+  text-shadow: var(--text-shadow-icon);
+  margin-right: .2rem;
+}
+
+.single-product .product-content .star {
+  color: var(--light-color);
+  font-size: 1.3rem;
+  padding: 0.5rem 0;
+  display: flex;
+}
+
+.single-product .product-content .star .fill-rate {
+  color: var(--main-color);
+}
+
+.single-product .product-content h3 {
+  margin: 0.5rem 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+.single-product .product-content p {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--light-color);
+  letter-spacing: 0.05rem;
+}
+
+.single-product .amount {
+  display: inline-flex;
+  align-items: center;
+  margin: 0.5rem 0 0 0;
+}
+
+.single-product .amount h4 {
+  font-size: 1.5rem;
+  color: var(--main-color);
+  margin-right: 0.5rem;
+}
+
+.single-product .amount h5 {
+  font-size: 1.2rem;
+  text-decoration: line-through;
+  font-weight: 400;
+  color: var(--light-color);
+}
+
+.single-product .product-content h2 {
+  margin-top: 0.5rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  letter-spacing: 0.05rem;
+  text-transform: uppercase;
+}
+
+.single-product .product-content h2 span {
+  text-transform: capitalize;
+  font-weight: 300;
+}
+
+.single-product .product-content .product-buttons {
+  margin: 2rem auto;
+}
+
+.single-product .product-content .product-buttons a{
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: .5rem 1rem;
+  margin-right: 1rem;
+  border: var(--main-border);
+}
+
+.single-product .product-content .product-buttons a:hover{
+  background-color: var(--white);
+  color: var(--main-color);
+  box-shadow: var(--main-box-shadow);
+}
