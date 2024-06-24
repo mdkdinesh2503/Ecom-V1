@@ -93,14 +93,22 @@
 
                         <div class="main-input">
                             <i class="fas fa-shopping-basket"></i>
-                            <input type="text" placeholder="category name..." autocomplete="off" required>
+                            <input type="text" id="category" name="category" placeholder="category name..." autocomplete="off" onkeyup="categoryValidate()" required>
+                        </div>
+
+                        <div class="information-error">
+                            <p id="categorySuccessMsg" class="success"><i id="categorySuccessMsg" class="fas fa-thumbs-up"></i>
+                                Correct</p>
+                            <p class="error" id="categoryErrorMsg"><i id="categoryErrorMsg"
+                                    class="fas fa-exclamation-circle"></i>
+                                Enter valid Category name!</p>
                         </div>
 
                         <div class="buttons">
 
-                            <a id="smtbtn" type="submit" class="btn">
+                            <button id="smtbtn" type="submit" class="btn">
                                 <i class="fas fa-plus"></i> Create
-                            </a>
+                            </button>
 
                         </div>
 
@@ -182,5 +190,6 @@
     </body>
 
     <!-- Javascript connection link  -->
+    <script src="./adminScript.js"></script>
 
 </html>
