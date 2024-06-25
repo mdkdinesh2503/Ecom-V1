@@ -61,64 +61,129 @@
 
             <div class="main-content">
 
-                <form class="add-table">
+                <div class="header-single add-products-header">
 
-                    <h1>Add Product</h1>
+                    <h1><i class="fas fa-plus"></i> Add Products</h1>
 
-                    <p class="main-input-name">Mobile Number</p>
+                    <a href="adminProducts.html"><i class="fas fa-times"></i></a>
 
-                    <div class="main-input">
-                        <i class="fas fa-phone"></i>
-                        <input type="tel" id="mobile" name="mobile" placeholder="mobile no..." autocomplete="off" onkeyup="mobileValidate()" required>
-                    </div>
+                </div>
 
-                    <div class="information-error">
-                        <p id="mobileSuccessMsg" class="success"><i id="mobileSuccessMsg" class="fas fa-thumbs-up"></i>
-                            Correct</p>
-                        <p class="error" id="mobileErrorMsg"><i id="mobileErrorMsg"
-                                class="fas fa-exclamation-circle"></i>
-                            Enter valid Mobile Number!</p>
-                    </div>
+                <form class="Product-forms">
 
-                    <p class="main-input-name">Email</p>
+                    <div class="forms-seperate">
 
-                    <div class="main-input">
-                        <i class="fas fa-envelope"></i>
-                        <input type="email" id="email" name="email" placeholder="email..." autocomplete="off" onkeyup="emailValidate()" required>
-                    </div>
+                        <div class="fields">
 
-                    <div class="information-error">
-                        <p id="emailSuccessMsg" class="success"><i id="emailSuccessMsg" class="fas fa-thumbs-up"></i>
-                            Correct</p>
-                        <p class="error" id="emailErrorMsg"><i id="emailErrorMsg" class="fas fa-exclamation-circle"></i>
-                            Enter valid Email Id!</p>
-                    </div>
+                            <p class="main-input-name">Title</p>
 
-                    <p class="main-input-name">Password</p>
+                            <div class="product-input">
+                                <i class="fas fa-file"></i>
+                                <textarea name="title" id="title" placeholder="title..." autocomplete="off"
+                                    required></textarea>
+                            </div>
 
-                    <div class="main-input">
-                        <i class="fas fa-lock"></i>
-                        <input type="text" id="password" name="password" placeholder="password..." autocomplete="off" onkeyup="passwordValidate()" required>
-                    </div>
+                            <p class="main-input-name">Description</p>
 
-                    <div class="information-error">
-                        <p id="passSuccessMsg" class="success"><i id="passSuccessMsg" class="fas fa-thumbs-up"></i>
-                            Correct
-                        </p>
-                        <p class="error" id="passErrorMsg"><i id="passErrorMsg" class="fas fa-exclamation-circle"></i>
-                            Enter
-                            valid Password!</p>
-                    </div>
+                            <div class="product-input">
+                                <i class="fas fa-file-alt"></i>
+                                <textarea name="description" id="description" placeholder="description..."
+                                    autocomplete="off" required></textarea>
+                            </div>
 
-                    <div class="buttons">
+                            <p class="main-input-name">Category</p>
 
-                        <button id="smtbtn" type="submit" class="btn">
-                            <i class="fas fa-plus"></i> Create
-                        </button>&numsp;
+                            <div class="product-input">
+                                <i class="fas fa-shopping-basket"></i>
+                                <select name="category" id="category" required>
+                                    <option disabled selected class="disabled">Select category</option>
+                                    <option value="Grocery">Grocery</option>
+                                    <option value="Mobiles">Mobiles</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Furnitures">Furnitures</option>
+                                    <option value="Appliances">Appliances</option>
+                                    <option value="Toys">Toys</option>
+                                </select>
+                            </div>
 
-                        <a id="cancelbtn" href="adminCustomers.html" class="btn">
-                            <i class="fas fa-times"></i> Cancel
-                        </a>
+                            <p class="main-input-name">Price</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-cash-register"></i>
+                                <input type="number" name="price" id="price" placeholder="price..." autocomplete="off"
+                                    required />
+                            </div>
+
+                            <p class="main-input-name">Discount</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-percentage"></i>
+                                <input type="text" name="discount" id="discount" placeholder="discount..."
+                                    autocomplete="off" required />
+                            </div>
+
+                        </div>
+
+                        <div class="fields">
+
+                            <p class="main-input-name">Available</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-phone"></i>
+                                <input type="number" name="available" id="available" placeholder="available..."
+                                    autocomplete="off" required />
+                            </div>
+
+                            <p class="main-input-name">rating</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-star"></i>
+                                <div class="product-rate">
+                                    <span onclick="rate(1)" class="star">★
+                                    </span>
+                                    <span onclick="rate(2)" class="star">★
+                                    </span>
+                                    <span onclick="rate(3)" class="star">★
+                                    </span>
+                                    <span onclick="rate(4)" class="star">★
+                                    </span>
+                                    <span onclick="rate(5)" class="star">★
+                                    </span>
+                                </div>
+                                <input disabled type="text" value=" Star Rating : "/>
+                                <input disabled type="text" name="rating" id="rating" autocomplete="off" required value="0"/>
+                            </div>
+
+                            <p class="main-input-name">rating Count</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-user"></i>
+                                <input type="number" name="ratingCount" id="ratingCount" placeholder="rating count..."
+                                    autocomplete="off" required />
+                            </div>
+
+                            <p class="main-input-name">Image</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-image"></i>
+                                <input type="file" name="image" id="image" placeholder="image..." autocomplete="off"
+                                    required />
+                            </div>
+
+                            <div class="buttons">
+
+                                <button id="smtbtn" type="submit" class="btn">
+                                    <i class="fas fa-plus"></i> Create
+                                </button>&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;&numsp;
+
+                                <a id="cancelbtn" href="adminProducts.html" class="btn">
+                                    <i class="fas fa-times"></i> Cancel
+                                </a>
+
+                            </div>
+
+                        </div>
 
                     </div>
 

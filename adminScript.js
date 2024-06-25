@@ -106,3 +106,29 @@ function categoryValidate() {
   SuccessMsg.style.display = "block";
   SuccessMsg.style.visibility = "visible";
 }
+
+// Star Rating
+
+let stars = document.getElementsByClassName("star");
+let output = document.getElementById("rating");
+
+function rate(n) {
+  remove();
+  for (let i = 0; i < n; i++) {
+    if (n == 1) cls = "one-star";
+    else if (n == 2) cls = "two-star";
+    else if (n == 3) cls = "three-star";
+    else if (n == 4) cls = "four-star";
+    else if (n == 5) cls = "five-star";
+    stars[i].className = "star " + cls;
+  }
+  output.value = n;
+}
+
+function remove() {
+  let i = 0;
+  while (i < 5) {
+    stars[i].className = "star";
+    i++;
+  }
+}
