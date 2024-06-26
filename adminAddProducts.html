@@ -53,8 +53,8 @@
                 <li><a href="adminCustomers.html"><i class="fas fa-users"></i>Cutomers</a></li>
                 <li><a href="adminCategories.html"><i class="fas fa-shopping-basket"></i>Categories</a></li>
                 <li class="activated"><a href="adminProducts.html"><i class="fas fa-shopping-bag"></i>Products</a></li>
-                <li><a href="adminOrders.html"><i class="fas fa-cash-register"></i>Orders</a></li>
-                <li><a href="adminDeliveries.html"><i class="fas fa-shipping-fast"></i>Deliveries</a></li>
+                <li><a href="adminOrders.html"><i class="fas fa-shipping-fast"></i>Orders</a></li>
+                <li><a href="adminInvoice.html"><i class="fas fa-cash-register"></i>Invoice</a></li>
                 <li><a href="adminReviews.html"><i class="fas fa-file-alt"></i>Reviews</a></li>
                 <li><a href="adminSettings.html"><i class="fas fa-cog fa-spin"></i>Settings</a></li>
             </ul>
@@ -75,6 +75,14 @@
 
                         <div class="fields">
 
+                            <p class="main-input-name">Id</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-info-circle"></i>
+                                <input type="number" name="id" id="id" placeholder="id..." autocomplete="off"
+                                    required />
+                            </div>
+
                             <p class="main-input-name">Title</p>
 
                             <div class="product-input">
@@ -89,22 +97,6 @@
                                 <i class="fas fa-file-alt"></i>
                                 <textarea name="description" id="description" placeholder="description..."
                                     autocomplete="off" required></textarea>
-                            </div>
-
-                            <p class="main-input-name">Category</p>
-
-                            <div class="product-input">
-                                <i class="fas fa-shopping-basket"></i>
-                                <select name="category" id="category" required>
-                                    <option disabled selected class="disabled">Select category</option>
-                                    <option value="Grocery">Grocery</option>
-                                    <option value="Mobiles">Mobiles</option>
-                                    <option value="Fashion">Fashion</option>
-                                    <option value="Electronics">Electronics</option>
-                                    <option value="Furnitures">Furnitures</option>
-                                    <option value="Appliances">Appliances</option>
-                                    <option value="Toys">Toys</option>
-                                </select>
                             </div>
 
                             <p class="main-input-name">Price</p>
@@ -126,6 +118,22 @@
                         </div>
 
                         <div class="fields">
+
+                            <p class="main-input-name">Category</p>
+
+                            <div class="product-input">
+                                <i class="fas fa-shopping-basket"></i>
+                                <select name="category" id="category" required>
+                                    <option disabled selected class="disabled">Select category</option>
+                                    <option value="Grocery">Grocery</option>
+                                    <option value="Mobiles">Mobiles</option>
+                                    <option value="Fashion">Fashion</option>
+                                    <option value="Electronics">Electronics</option>
+                                    <option value="Furnitures">Furnitures</option>
+                                    <option value="Appliances">Appliances</option>
+                                    <option value="Toys">Toys</option>
+                                </select>
+                            </div>
 
                             <p class="main-input-name">Available</p>
 

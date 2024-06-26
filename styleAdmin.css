@@ -826,6 +826,20 @@ header .header-logout img {
   padding-left: 1rem;
 }
 
+.single-product .product-content .productId {
+  color: var(--main-color);
+  font-size: 1.1rem;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
+.single-product .product-content .productId span {
+  font-weight: 600;
+  color: var(--black);
+  text-shadow: var(--text-shadow);
+}
+
 .single-product .product-content .discount {
   padding: 0.5rem 1rem;
   background-color: var(--main-color);
@@ -925,4 +939,48 @@ header .header-logout img {
   max-width: 1200px;
   width: 100%;
   margin: -.5rem auto;
+}
+
+
+/* admin Settings */
+
+.settings {
+  padding: 1rem 3%;
+}
+
+.settings h1{
+  position: relative;
+  color: var(--main-color);
+  font-weight: 400;
+  letter-spacing: .1rem;
+}
+
+.settings h1::before{
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -1px;
+  height: 2px;
+  width: 160px;
+  border-radius: 8px;
+  background-color: var(--main-color);
+}
+
+fieldset {
+  border: var(--main-border);
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 2rem;
+  box-shadow: var(--box-shadow);
+}
+
+legend {
+  color: var(--main-color);
+  text-transform: uppercase;
+  padding: 0 .1rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  align-items: center;
+  letter-spacing: .2rem;
 }
