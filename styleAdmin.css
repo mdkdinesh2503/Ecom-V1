@@ -148,6 +148,22 @@ html {
   color: var(--white);
 }
 
+.list-table tbody tr td .fa-eye {
+  border: var(--main-border);
+  background-color: var(--main-color);
+  color: var(--white);
+  padding: 0.3rem;
+  border-radius: 0.2rem;
+  margin-left: .5rem;
+  cursor: pointer;
+  font-size: 1rem;
+}
+
+.list-table tbody tr td .fa-eye:hover {
+  background-color: var(--white);
+  color: var(--main-color);
+}
+
 /* Overall List Table section ends here */
 
 /* Overall error section starts here */
