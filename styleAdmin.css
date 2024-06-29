@@ -154,7 +154,7 @@ html {
   color: var(--white);
   padding: 0.3rem;
   border-radius: 0.2rem;
-  margin-left: .5rem;
+  margin-left: 0.5rem;
   cursor: pointer;
   font-size: 1rem;
 }
@@ -207,7 +207,7 @@ html {
   display: inline-flex;
 }
 
-.star-rating .fill-rate{
+.star-rating .fill-rate {
   color: var(--light-color);
   text-shadow: var(--text-shadow-icon);
   font-size: 2rem;
@@ -350,6 +350,7 @@ html {
   cursor: pointer;
 }
 
+.view-input #image::file-selector-button,
 .product-input #image::file-selector-button {
   font-size: 1rem;
   border: var(--main-border);
@@ -363,6 +364,7 @@ html {
   letter-spacing: 0.1rem;
 }
 
+.view-input #image::file-selector-button:hover,
 .product-input #image::file-selector-button:hover {
   background-color: var(--white);
   color: var(--main-color);
@@ -794,7 +796,7 @@ header .header-logout img {
   left: 0;
   bottom: -1px;
   height: 2px;
-  width: 300px;
+  width: 250px;
   border-radius: 8px;
   background-color: var(--main-color);
 }
@@ -845,7 +847,7 @@ header .header-logout img {
 .single-product .product-content .productId {
   color: var(--main-color);
   font-size: 1.1rem;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
   text-transform: uppercase;
   font-weight: 700;
 }
@@ -887,6 +889,12 @@ header .header-logout img {
   font-weight: 300;
   color: var(--light-color);
   letter-spacing: 0.05rem;
+}
+
+.single-product .review {
+  color: var(--main-color);
+  font-size: 1.2rem;
+  align-items: center;
 }
 
 .single-product .amount {
@@ -941,7 +949,7 @@ header .header-logout img {
 
 /* Admin Add Products */
 
-.add-products-header {
+.add-extra-header {
   margin: 1rem 5%;
 }
 
@@ -954,9 +962,8 @@ header .header-logout img {
 .Product-forms {
   max-width: 1200px;
   width: 100%;
-  margin: -.5rem auto;
+  margin: -0.5rem auto;
 }
-
 
 /* admin Settings */
 
@@ -964,14 +971,14 @@ header .header-logout img {
   padding: 1rem 3%;
 }
 
-.settings h1{
+.settings h1 {
   position: relative;
   color: var(--main-color);
   font-weight: 400;
-  letter-spacing: .1rem;
+  letter-spacing: 0.1rem;
 }
 
-.settings h1::before{
+.settings h1::before {
   content: "";
   position: absolute;
   left: 0;
@@ -994,9 +1001,60 @@ fieldset {
 legend {
   color: var(--main-color);
   text-transform: uppercase;
-  padding: 0 .1rem;
+  padding: 0 0.1rem;
   font-size: 1.4rem;
   font-weight: 700;
   align-items: center;
-  letter-spacing: .2rem;
+  letter-spacing: 0.2rem;
+}
+
+/* View Data  */
+
+.view-seperate {
+  margin-top: 2rem;
+  display: grid;
+  justify-content: center;
+}
+
+.view-data {
+  margin: 2rem 6%;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.view-input {
+  display: inline-flex;
+  width: 100%;
+}
+
+.view-input .input-name {
+  color: var(--white);
+  border: var(--main-border);
+  background-color: var(--main-color);
+  font-size: 1.2rem;
+  padding: 0.5rem 1rem;
+  letter-spacing: 0.1rem;
+  text-transform: uppercase;
+  width: 32%;
+  text-align: start;
+}
+
+.view-input input {
+  width: 23rem;
+}
+
+.view-input select {
+width: 25rem;
+}
+
+.view-input select,
+.view-input input,
+.view-input textarea {
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  background-color: var(--white);
+  color: var(--light-color);
+  letter-spacing: 0.1rem;
+  font-size: 1rem;
+  border: var(--main-border);
 }
