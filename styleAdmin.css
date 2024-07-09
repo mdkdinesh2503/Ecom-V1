@@ -1045,7 +1045,7 @@ legend {
 }
 
 .view-input select {
-width: 25rem;
+  width: 25rem;
 }
 
 .view-input select,
@@ -1057,4 +1057,148 @@ width: 25rem;
   letter-spacing: 0.1rem;
   font-size: 1rem;
   border: var(--main-border);
+}
+
+.view-order {
+  padding: 1rem;
+}
+
+.view-order .order-content {
+  margin: 1rem;
+  padding: 0 1rem 1rem;
+  background-color: var(--white);
+}
+
+.order-content .view-order-header {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 3%;
+}
+
+.view-order-header .order-id {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+.view-order-header .order-id span {
+  color: var(--main-color);
+}
+
+.view-order-header .order-status {
+  background-color: var(--main-color);
+  font-size: 1.2rem;
+  color: var(--white);
+  font-weight: 500;
+  padding: 0.2rem 0.8rem;
+}
+
+.order-content .view-order-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  justify-content: space-evenly;
+  width: 100%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.order-content .view-order-info .data h2 {
+  color: var(--main-color);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  font-size: 1.3rem;
+}
+
+.order-content .view-order-info .data p {
+  color: var(--light-color);
+  font-size: 1.2rem;
+}
+
+.order-section {
+  width: fit-content;
+  margin: 1rem auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background-color: var(--white);
+  gap: 3rem;
+}
+
+.view-order-content {
+  border: var(--main-border);
+  padding: 0.5rem;
+}
+
+.order-section .view-order-content h2 {
+  background-color: var(--main-color);
+  border: var(--main-border);
+  color: var(--white);
+  text-transform: uppercase;
+  font-size: 1.2rem;
+  padding: 0.2rem 0 0.4rem 0.4rem;
+  font-weight: 500;
+  display: grid;
+  grid-template-columns: 28% 71%;
+  margin: 0.5rem 0 0.5rem 0.5rem;
+  align-items: center;
+}
+
+.order-section .view-order-content span {
+  background-color: var(--white);
+  text-transform: none;
+  color: var(--main-color);
+  border-left: var(--main-border);
+  padding: 0.4rem;
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
+.order-heading {
+  font-size: 1.6rem;
+  color: var(--main-color);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  padding-left: 0.5rem;
+}
+
+.view-order-content p {
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--black);
+  border: var(--main-border);
+  padding: 0.4rem 0.8rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin: 1rem 0.5rem 0.5rem;
+  align-items: center;
+}
+
+.view-order-content .order-total {
+  background-color: var(--main-color);
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: 0.1rem;
+  color: var(--white);
+  align-items: center;
+  padding: 0.4rem 0.8rem;
+  display: grid;
+  grid-template-columns: 40% 60%;
+  margin: 1rem 0.5rem 0.5rem;
+}
+
+.order-image {
+  height: 4rem;
+  width: 4rem;
+}
+
+.order-image img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.order-textarea {
+  font-size: .9rem;
+  color: var(--black);
 }
