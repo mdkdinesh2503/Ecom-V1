@@ -11,7 +11,7 @@
     <title> V I E W - R E V W | S h o p i e . (A) </title>
 
     <!-- Title logo link  -->
-    <link rel="icon" type="image/x-icon" href="./images/Title_Image.png">
+    <link rel="icon" type="image/x-icon" href="../images/brand/Title_Image.png">
 
     <!-- Font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 
     <!-- Font style connection link -->
-    <link rel="stylesheet" href="./styleAdmin.css">
+    <link rel="stylesheet" href="../css/styleAdmin.css">
 
 </head>
 
@@ -31,15 +31,15 @@
         <!-- Header section starts here -->
         <header>
 
-            <a class="header-logo" href="./index.html" title="S h o p i e ."> <img src="./images/Title_Image.png"
+            <a class="header-logo" href="../index.html" title="S h o p i e ."> <img src="../images/brand/Title_Image.png"
                     alt="Header Logo">
                 <p class="header-name">Shopie.</p>
             </a>
 
-            <h1>Edit Admin</h1>
+            <h1>View Review</h1>
 
-            <a class="header-logout" href="./login.html" title="Logout">
-                Logout<img src="./images/LogOut.png" alt="->">
+            <a class="header-logout" href="../customer/login.html" title="Logout">
+                Logout<img src="../images/brand/LogOut.png" alt="->">
             </a>
 
         </header>
@@ -54,41 +54,47 @@
                 <li><a href="adminCategories.html"><i class="fas fa-shopping-basket"></i>Categories</a></li>
                 <li><a href="adminProducts.html"><i class="fas fa-shopping-bag"></i>Products</a></li>
                 <li><a href="adminOrders.html"><i class="fas fa-shipping-fast"></i>Orders</a></li>
-                <li><a href="adminReviews.html"><i class="fas fa-file-alt"></i>Reviews</a></li>
-                <li class="activated"><a href="adminSettings.html"><i class="fas fa-cog fa-spin"></i>Settings</a></li>
+                <li class="activated"><a href="adminReviews.html"><i class="fas fa-file-alt"></i>Reviews</a></li>
+                <li><a href="adminSettings.html"><i class="fas fa-cog fa-spin"></i>Settings</a></li>
             </ul>
 
             <div class="main-content">
 
                 <div class="header-single add-extra-header">
 
-                    <h1><i class="fas fa-user"></i> Edit admin Details</h1>
+                    <h1><i class="fas fa-user"></i> Review Details</h1>
 
-                    <a href="adminSettings.html"><i class="fas fa-times"></i></a>
+                    <a href="adminReviews.html"><i class="fas fa-times"></i></a>
 
                 </div>
 
-                <form class="view-seperate">
+                <div class="view-seperate">
 
                     <div class="fields">
 
                         <div class="view-input">
-                            <p class="input-name">userNAME</p>
-                            <textarea name="" id="" rows="1" cols="30" required>Dinesh Kumar M</textarea>
+                            <p class="input-name">NAME</p>
+                            <textarea name="" id="" rows="1" cols="30" disabled>Dinesh Kumar M</textarea>
                         </div><br><br>
 
                         <div class="view-input">
-                            <p class="input-name">password</p>
-                            <textarea name="" id="" rows="1" cols="30"  required>mdkdinesh2503@gmail.com</textarea>
+                            <p class="input-name">Email</p>
+                            <textarea name="" id="" rows="1" cols="30"  disabled>mdkdinesh2503@gmail.com</textarea>
+                        </div><br><br>
+
+                        <div class="view-input">
+                            <p class="input-name">Mobile Number</p>
+                            <textarea name="" id="" rows="1" cols="30" disabled>9787943467</textarea>
+                        </div><br><br>
+
+                        <div class="view-input">
+                            <p class="input-name">Message</p>
+                            <textarea name="" id="" rows="5" cols="30" disabled>I have an issue while login every time</textarea>
                         </div>
 
                     </div>
 
-                    <div class="buttons">
-                        <button type="submit" class="btn"><i class="far fa-edit"></i> Edit</button>
-                    </div>
-
-                </form>
+                </div>
 
             </div>
 
@@ -98,6 +104,6 @@
     </body>
 
     <!-- Javascript connection link  -->
-    <script src="./adminScript.js"></script>
+    <script src="../js/adminScript.js"></script>
 
 </html>

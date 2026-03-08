@@ -8,10 +8,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <!-- Title name  -->
-    <title> R E V W | S h o p i e . (A) </title>
+    <title> C S T R | S h o p i e . (A) </title>
 
     <!-- Title logo link  -->
-    <link rel="icon" type="image/x-icon" href="./images/Title_Image.png">
+    <link rel="icon" type="image/x-icon" href="../images/brand/Title_Image.png">
 
     <!-- Font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
@@ -20,7 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,400,300,500,600,700" rel="stylesheet">
 
     <!-- Font style connection link -->
-    <link rel="stylesheet" href="./styleAdmin.css">
+    <link rel="stylesheet" href="../css/styleAdmin.css">
 
 </head>
 
@@ -31,15 +31,15 @@
         <!-- Header section starts here -->
         <header>
 
-            <a class="header-logo" href="./index.html" title="S h o p i e ."> <img src="./images/Title_Image.png"
+            <a class="header-logo" href="../index.html" title="S h o p i e ."> <img src="../images/brand/Title_Image.png"
                     alt="Header Logo">
                 <p class="header-name">Shopie.</p>
             </a>
 
-            <h1>Reviews</h1>
+            <h1>Customers</h1>
 
-            <a class="header-logout" href="./login.html" title="Logout">
-                Logout<img src="./images/LogOut.png" alt="->">
+            <a class="header-logout" href="../customer/login.html" title="Logout">
+                Logout<img src="../images/brand/LogOut.png" alt="->">
             </a>
 
         </header>
@@ -50,28 +50,30 @@
 
             <ul id="sidebar">
                 <li><a href="adminDashboard.html"><i class="fas fa-home"></i>Dashboard</a></li>
-                <li><a href="adminCustomers.html"><i class="fas fa-users"></i>Cutomers</a></li>
+                <li class="activated"><a href="adminCustomers.html"><i class="fas fa-users"></i>Cutomers</a></li>
                 <li><a href="adminCategories.html"><i class="fas fa-shopping-basket"></i>Categories</a></li>
                 <li><a href="adminProducts.html"><i class="fas fa-shopping-bag"></i>Products</a></li>
                 <li><a href="adminOrders.html"><i class="fas fa-shipping-fast"></i>Orders</a></li>
-                <li class="activated"><a href="adminReviews.html"><i class="fas fa-file-alt"></i>Reviews</a></li>
+                <li><a href="adminReviews.html"><i class="fas fa-file-alt"></i>Reviews</a></li>
                 <li><a href="adminSettings.html"><i class="fas fa-cog fa-spin"></i>Settings</a></li>
             </ul>
 
             <div class="main-content">
 
                 <div class="sub-header">
+                    <div class="main-total">
+                        <i class="fas fa-users"></i>
+                        <h1>Total Customers :</h1>
+                        <p>50+</p>
+                    </div>
 
                     <div class="main-search">
                         <i class="fas fa-search"></i>
                         <input type="search" placeholder="Search" autocomplete="off">
                     </div>
-                    
-                    <div class="main-total">
-                        <i class="fas fa-file-alt"></i>
-                        <h1>Total Reviews:</h1>
-                        <p>50+</p>
-                    </div>
+
+                    <a class="main-btn" href="adminAddCustomers.html"> <i class="fas fa-user-plus"></i> Add
+                        Customer</a>
 
                 </div>
 
@@ -80,9 +82,9 @@
                     <thead>
                         <tr>
                             <th>Id <span class="fas fa-sort-numeric-down"></span></th>
-                            <th>Name <span class="fas fa-sort-alpha-down"></span></th>
-                            <th>Email <span class="fas fa-sort-alpha-down"></span></th>
                             <th>Mobile Number <span class="fas fa-sort-numeric-down"></span></th>
+                            <th>Email <span class="fas fa-sort-alpha-down"></span></th>
+                            <th>Password <span class="fas fa-sort-alpha-down"></span></th>
                             <th>Delete</th>
                             <th>View</th>
                         </tr>
@@ -92,56 +94,56 @@
 
                         <tr>
                             <td>01</td>
-                            <td>aparna</td>
+                            <td>9876543215</td>
                             <td>aparna@gmail.com</td>
                             <td>Aparna@123</td>
                             <td><i class="fas fa-trash-alt" title="delete"></i></td>
-                            <td><a href="adminViewReviews.html"><i class="fas fa-eye" title="view"></i></a></td>
+                            <td><a href="adminViewCustomers.html"><i class="fas fa-eye" title="view"></i></a></td>
                         </tr>
 
                         <tr>
                             <td>02</td>
-                            <td>dinesh</td>
+                            <td>9865741523</td>
                             <td>dinesh@gmail.com</td>
                             <td>Dinesh@123</td>
                             <td><i class="fas fa-trash-alt" title="delete"></i></td>
-                            <td><a href="adminViewReviews.html"><i class="fas fa-eye" title="view"></i></a></td>
+                            <td><a href="adminViewCustomers.html"><i class="fas fa-eye" title="view"></i></a></td>
                         </tr>
 
                         <tr>
                             <td>03</td>
-                            <td>divya</td>
+                            <td>8567429632</td>
                             <td>divya@gmail.com</td>
                             <td>Divya@123</td>
                             <td><i class="fas fa-trash-alt" title="delete"></i></td>
-                            <td><a href="adminViewReviews.html"><i class="fas fa-eye" title="view"></i></a></td>
+                            <td><a href="adminViewCustomers.html"><i class="fas fa-eye" title="view"></i></a></td>
                         </tr>
 
                         <tr>
                             <td>04</td>
-                            <td>ganesh</td>
+                            <td>6850002568</td>
                             <td>ganesh@gmail.com</td>
                             <td>Ganesh@123</td>
                             <td><i class="fas fa-trash-alt" title="delete"></i></td>
-                            <td><a href="adminViewReviews.html"><i class="fas fa-eye" title="view"></i></a></td>
+                            <td><a href="adminViewCustomers.html"><i class="fas fa-eye" title="view"></i></a></td>
                         </tr>
 
                         <tr>
                             <td>05</td>
-                            <td>kiran</td>
+                            <td>7858652534</td>
                             <td>kiran@gmail.com</td>
                             <td>Kiran@123</td>
                             <td><i class="fas fa-trash-alt" title="delete"></i></td>
-                            <td><a href="adminViewReviews.html"><i class="fas fa-eye" title="view"></i></a></td>
+                            <td><a href="adminViewCustomers.html"><i class="fas fa-eye" title="view"></i></a></td>
                         </tr>
 
                         <tr>
                             <td>06</td>
-                            <td>kavin</td>
+                            <td>8600250041</td>
                             <td>kavin@gmail.com</td>
                             <td>Kavin@123</td>
                             <td><i class="fas fa-trash-alt" title="delete"></i></td>
-                            <td><a href="adminViewReviews.html"><i class="fas fa-eye" title="view"></i></a></td>
+                            <td><a href="adminViewCustomers.html"><i class="fas fa-eye" title="view"></i></a></td>
                         </tr>
 
                     </tbody>

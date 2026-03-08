@@ -1,7 +1,8 @@
 // Product Display starts here
 
 let products = null;
-fetch("products.json")
+const _base = window.location.pathname.includes("/admin/") ? "../" : "";
+fetch(_base + "data/products.json")
   .then((response) => response.json())
   .then((data) => {
     products = data;
